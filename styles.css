@@ -212,37 +212,37 @@ body {
     min-height: 100vh;
     max-width: 100vw;
     box-sizing: border-box;
-    }
+}
     
-    .left {
-        background: #223144;
-        width: 40%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
-
-    
-    .right {
-        background: #f6f6f6;
-        width: 60%;
-        
-    }
-
-   .title {
+.left {
+    background: #223144;
+    width: 40%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
-    background: linear-gradient(120deg, #223144 70%, #3a4a6a 100%);
-    border-radius: 0 0 32px 32px;
-    box-shadow: 0 8px 32px 0 rgba(34,49,68,0.10);
-    min-height: 260px;
-    width: 100%;
     position: relative;
-    overflow: hidden;
+}
+
+
+.right {
+    background: #f6f6f6;
+    width: 60%;
+    
+}
+
+.title {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-bottom: 50px;
+background: linear-gradient(120deg, #223144 70%, #3a4a6a 100%);
+border-radius: 0 0 32px 32px;
+box-shadow: 0 8px 32px 0 rgba(34,49,68,0.10);
+min-height: 260px;
+width: 100%;
+position: relative;
+overflow: hidden;
 }
 
 .name {
@@ -420,16 +420,33 @@ body {
     }
 
     .project-card {
-        background: #fff;
-        border-radius: 18px;
-        box-shadow: 0 4px 24px 0 rgba(34,49,68,0.10);
-        padding: 32px 28px;
-        width: 320px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px 0 rgba(34,49,68,0.10);
+    padding: 32px 28px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.4s cubic-bezier(.4,2,.3,1), box-shadow 0.3s, opacity 0.5s;
+    opacity: 0.2;
+    transform: translateY(60px) scale(0.98);
+}
+.project-card.show {
+    opacity: 1;
+    transform: translateY(0) scale(1.01);
+    box-shadow: 0 8px 32px 0 rgba(34,49,68,0.18);
+}
+.cursor {
+    color: #ff9800;
+    font-weight: bold;
+    animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
     .project-card:hover {
         transform: translateY(-8px) scale(1.03);
         box-shadow: 0 8px 32px 0 rgba(34,49,68,0.18);
